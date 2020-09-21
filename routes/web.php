@@ -6,9 +6,11 @@ Route::get('/', function () {
 
 
 // ============================================================================
-// Devnotes
+// Backofffice
 // ============================================================================
 Route::get('devnote/{fichier?}', 'DevnotesController@index')->name('devnotes');
+Route::get('backoffice', 'BackofficeController@index')->name('backoffice');
+Route::get('backoffice/user.list', 'BackofficeController@user_list')->name('user.list');
 
 
 Auth::routes(['verify' => true]);
