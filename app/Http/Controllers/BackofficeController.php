@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class BackofficeController extends Controller
@@ -18,6 +19,7 @@ class BackofficeController extends Controller
     }
 
     public function user_list(){
-        return view('1 Backoffice.pages.users.users');
+        $users = User::all();
+        return view('1 Backoffice.pages.users.users', compact('users'));
     }
 }
